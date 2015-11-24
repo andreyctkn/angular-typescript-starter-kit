@@ -1,6 +1,3 @@
-import 'angular';
-import 'angular-mocks';
-
 import { HelloComponent } from '../../src/hello/hello.component';
 
 describe('HelloComponent', () => {
