@@ -1,7 +1,9 @@
+import IDirectiveFactory = ng.IDirectiveFactory;
+
 export class HelloComponent {
 	static selector = 'hello';
 	
-	static directiveFactory: ng.IDirectiveFactory = () => {
+	static directiveFactory: IDirectiveFactory = () => {
 		return {
 			restrict: 'E',
 			controller: HelloComponent,

@@ -83,3 +83,4 @@ crashlytics-build.properties
 # tsd locations
 
 app/__typings
+app/__build

@@ -53,7 +53,8 @@ module.exports = {
 		loaders: [
 			{ test: /\.ts$/, loader: 'ts', exclude: /(node_modules|bower_components)/ },
 			{ test: /\.html$/, loader: 'raw' }
-		]
+		],
+		noParse: [/[\/\\]angular\.js$/]
 	},
 
 	devServer: {
