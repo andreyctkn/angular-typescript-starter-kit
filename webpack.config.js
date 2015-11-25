@@ -16,7 +16,7 @@ module.exports = {
 		reasons: true
 	},
 
-	devtool: 'source-map',
+	devtool: 'inline-source-map',
 
 	output: {
 		path: path.resolve(__dirname, 'app', '__build'),
