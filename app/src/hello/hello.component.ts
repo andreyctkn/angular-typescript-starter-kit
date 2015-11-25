@@ -3,6 +3,7 @@ import IDirectiveFactory = ng.IDirectiveFactory;
 export class HelloComponent {
 
 	displayName: String;
+	style: any;
 	static selector = 'hello';
 
 	static directiveFactory: IDirectiveFactory = () => {
@@ -16,5 +17,6 @@ export class HelloComponent {
 
 	constructor() {
 		this.displayName = 'firstName';
+		this.style = require('./hello.css');
 	}
 }

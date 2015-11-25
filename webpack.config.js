@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	context: path.resolve(__dirname, 'app'),
@@ -38,6 +39,7 @@ module.exports = {
 
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[hash].bundle.js'),
+		new ExtractTextPlugin('style.css', { allChunks: true }),
 		new HtmlWebpackPlugin({
 			template: './app/index.html',
 			inject: 'body',
@@ -52,12 +54,14 @@ module.exports = {
 		}],
 		loaders: [
 			{ test: /\.ts$/, loader: 'ts', exclude: /(node_modules|bower_components)/ },
-			{ test: /\.html$/, loader: 'raw' }
+			{ test: /\.html$/, loader: 'raw' },
+			{ test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]') }
 		],
 		noParse: [/[\/\\]angular\.js$/]
 	},
 
 	devServer: {
+		port: 3000,
 		inline: true,
 		colors: true,
 		contentBase: './app/__build',
