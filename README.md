@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/AndreyUtka/angular-typescript-starter-kit.svg?branch=master)](https://travis-ci.org/AndreyUtka/angular-typescript-starter-kit)
-[![Coverage Status](https://img.shields.io/coveralls/AndreyUtka/angular-typescript-starter-kit.svg)](https://coveralls.io/r/AndreyUtka/angular-typescript-starter-kit?branch=master)
+[![codecov.io](https://codecov.io/github/cainus/AndreyUtka/angular-typescript-starter-kit.svg?branch=master)](https://codecov.io/github/AndreyUtka/angular-typescript-starter-kit?branch=master)
 
 
 
