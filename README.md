@@ -2,7 +2,6 @@
 [![codecov.io](https://codecov.io/github/cainus/AndreyUtka/angular-typescript-starter-kit.svg?branch=master)](https://codecov.io/github/AndreyUtka/angular-typescript-starter-kit?branch=master)
 
 
-
 **Todo**
 
  - code coverage
