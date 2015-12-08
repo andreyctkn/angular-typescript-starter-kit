@@ -1,96 +1,100 @@
-// Karma configuration
-// Generated on Tue Nov 24 2015 13:53:36 GMT+0200 (EET)
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function (config) {
-  config.set({
+    config.set({
 
-    // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
-
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
-
-    plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-webpack'),
-      require('karma-sourcemap-loader'),
-    ],
-
-    // list of files / patterns to load in the browser
-    files: [
-      './app/unit/spec.loader.ts'
-    ],
-
-    // list of files to exclude
-    exclude: [
-    ],
+        // base path that will be used to resolve all patterns (eg. files, exclude)
+        basePath: '',
 
 
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-      './app/unit/spec.loader.ts': [
-        'webpack',
-        'sourcemap'
-      ]
-    },
+        // frameworks to use
+        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+        frameworks: ['jasmine'],
 
-    webpack: {
-      devtool: 'source-map',
-      resolve: {
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
-      },
-      module: {
-        loaders: [
-          { test: /\.ts$/, loader: 'ts', exclude: /node_modules/ },
-          { test: /\.html$/, loader: 'raw' }
-        ]
-      },
-      stats: { colors: true, reasons: true },
-      debug: false
-    },
+        plugins: [
+            require('karma-jasmine'),
+            require('karma-chrome-launcher'),
+            require('karma-webpack'),
+            require('karma-sourcemap-loader'),
+        ],
 
-    webpackServer: {
-      noInfo: true // prevent console spamming when running in Karma!
-    },
+        // list of files / patterns to load in the browser
+        files: [
+            './app/unit/spec.loader.ts'
+        ],
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+        // list of files to exclude
+        exclude: [
+        ],
 
 
-    // web server port
-    port: 9876,
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {
+            './app/unit/spec.loader.ts': [
+                'webpack',
+                'sourcemap'
+            ]
+        },
+
+        webpack: {
+            devtool: 'source-map',
+            resolve: {
+                extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+            },
+            module: {
+                loaders: [
+                    { test: /\.ts$/, loader: 'ts', exclude: /node_modules/ },
+                    { test: /\.html$/, loader: 'raw' },
+                    { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]') }
+
+                ]
+            },
+            plugins: [
+                new ExtractTextPlugin('style.css', { allChunks: true })
+            ],
+            stats: { colors: true, reasons: true },
+            debug: false
+        },
+
+        webpackServer: {
+            noInfo: true // prevent console spamming when running in Karma!
+        },
+
+        // test results reporter to use
+        // possible values: 'dots', 'progress'
+        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+        reporters: ['progress'],
 
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+        // web server port
+        port: 9876,
 
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_INFO,
 
 
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: true,
 
 
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: ['Chrome'],
 
-    // Concurrency level
-    // how many browser should be started simultanous
-    concurrency: Infinity
-  })
+
+        // Continuous Integration mode
+        // if true, Karma captures browsers, runs the tests and exits
+        singleRun: false,
+
+        // Concurrency level
+        // how many browser should be started simultanous
+        concurrency: Infinity
+    })
 }
