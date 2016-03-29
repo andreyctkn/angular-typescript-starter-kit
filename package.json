@@ -11,7 +11,7 @@
     "postinstall": "rimraf typings && typings install --no-insight",
     "start": "webpack-dev-server --inline --colors --display-error-details --display-cached",
     "clean": "rimraf app/__build",
-    "build": "npm run clean && webpack",
+    "build": "npm run clean && webpack -p",
     "test": "karma start",
     "e2e": "npm run build && gulp e2e"
   },

@@ -5,6 +5,11 @@ export class HelloComponent implements ng.IComponentOptions {
     static selector = "hello";
     static template = require("./hello.html");
     static controller = HelloComponent;
+    static $inject = ["$element"];
+
+    constructor($element) {
+        console.warn($element);
+    }
 
     $onInit() {
         this.displayName = "firstName";
