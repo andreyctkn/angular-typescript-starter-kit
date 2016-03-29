@@ -4,7 +4,7 @@ import {
 } from "./hello/hello.component";
 
 angular.module("ng-ts-starterkit", [])
-    .directive(HelloComponent.selector, HelloComponent.directiveFactory);
+    .component(HelloComponent.selector, HelloComponent);
 
 angular.element(document).ready(function () {
     angular.bootstrap(document, ["ng-ts-starterkit"]);

@@ -1,20 +1,21 @@
-import {IHelloScope} from "./hello.model";
-import IDirectiveFactory = ng.IDirectiveFactory;
-
-export class HelloComponent {
+export class HelloComponent implements ng.IComponentOptions {
     displayName: String;
     style: any;
-    static selector = "hello";
-    static directiveFactory: IDirectiveFactory = () => {
-        return {
-            restrict: "E",
-            link: (scope: IHelloScope) => new HelloComponent(scope),
-            template: require("./hello.html")
-        };
-    };
 
-    constructor(scope: IHelloScope) {
-        scope.displayName = "firstName";
-        scope.style = require("./hello.css");
+    static selector = "hello";
+    static template = require("./hello.html");
+    static controller = HelloComponent;
+
+    $onInit() {
+        this.displayName = "firstName";
+        this.style = require("./hello.css");
+    }
+
+    $onChanges(object: any) {
+        console.warn(object);
+    }
+
+    $onDestroy() {
+        console.warn("on destroy");
     }
 }
