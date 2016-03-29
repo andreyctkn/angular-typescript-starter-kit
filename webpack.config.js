@@ -41,7 +41,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[hash].bundle.js'),
         new ExtractTextPlugin('style.css', { allChunks: true }),
         new HtmlWebpackPlugin({
-            template: './app/index.html',
+            template: 'index.html',
             inject: 'body',
             minify: false
         })
