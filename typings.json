@@ -1,0 +1,12 @@
+{
+  "name": "angular-typescript-starter-kit",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160320081937",
+    "angular-mocks": "registry:dt/angular-mocks#1.3.0+20160322011350",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160317120654",
+    "jquery": "registry:dt/jquery#1.10.0+20160316155526",
+    "node": "registry:dt/node#4.0.0+20160319033040"
+  }
+}

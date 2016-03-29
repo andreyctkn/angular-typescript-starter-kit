@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 import {
-HelloComponent
+    HelloComponent
 } from './hello/hello.component';
 
 angular.module('ng-ts-starterkit', [])
