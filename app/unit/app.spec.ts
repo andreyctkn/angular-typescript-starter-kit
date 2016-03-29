@@ -1,10 +1,10 @@
-describe('Applications initializations', () => {
+describe("Applications initializations", () => {
     let module: ng.IModule;
     beforeEach(() => {
-        module = angular.module('ng-ts-starterkit');
+        module = angular.module("ng-ts-starterkit");
     });
 
-    it('should be registered', function() {
+    it("should be registered", function() {
         expect(module).not.toEqual(null);
     });
 });

@@ -44,7 +44,7 @@ module.exports = function (config) {
             },
             module: {
                 loaders: [
-                    { test: /\.ts$/, loader: 'ts', exclude: /node_modules/ },
+                    { test: /\.ts$/, loader: 'awesome-typescript', exclude: /node_modules/ },
                     { test: /\.html$/, loader: 'raw' },
                     { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]') }
                 ]
