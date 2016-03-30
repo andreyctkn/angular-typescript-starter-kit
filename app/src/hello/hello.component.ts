@@ -7,9 +7,7 @@ export class HelloComponent implements ng.IComponentOptions {
     static controller = HelloComponent;
     static $inject = ["$element"];
 
-    constructor($element) {
-        console.warn($element);
-    }
+    constructor($element) { }
 
     $onInit() {
         this.displayName = "firstName";
