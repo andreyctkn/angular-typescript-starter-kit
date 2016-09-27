@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "removeComments": false
+  },
+  "include": [
+    "typings/*"
+  ],
+  "files": [
+    "webpack.config.ts",
+    "karma.config.ts"
+  ]
+}

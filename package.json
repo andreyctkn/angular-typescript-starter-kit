@@ -8,9 +8,12 @@
   },
   "license": "MIT",
   "scripts": {
+    "postinstall": "npm run build-configs",
+    "dev-build-configs": "npm run build-configs -- --watch",
+    "build-configs": "tsc --project tsconfig.build-configs.json",
     "start": "webpack-dev-server --inline --colors --display-error-details --display-cached",
     "clean": "rimraf app/__build",
-    "build": "npm run clean && webpack -p",
+    "build": "npm run clean && webpack -p --config webpack.config.ts",
     "test": "karma start"
   },
   "bugs": {

@@ -1,7 +1,7 @@
-var path = require("path"),
-    webpack = require("webpack");
+import path = require("path");
+import webpack = require("webpack");
 
-var webpackConfig = {
+let webpackConfig: IWebpackConfig = {
     context: path.resolve(__dirname, 'app'),
 
     entry: {
@@ -32,8 +32,14 @@ var webpackConfig = {
 
     module: {
         loaders: [
-            {test: /\.ts$/, loader: 'awesome-typescript', exclude: /(node_modules|bower_components)/},
-            {test: /\.html$/, loader: 'raw'}
+            {
+                test: /\.ts$/,
+                loader: 'awesome-typescript',
+                exclude: /(node_modules|bower_components)/
+            },
+            {
+                test: /\.html$/, loader: 'raw'
+            }
         ],
     }
 };
