@@ -2,12 +2,12 @@ import path = require("path");
 import webpack = require("webpack");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 
-let webpackConfig: IWebpackConfig = {
+let webpackConfig: bc.IWebpackConfig = {
     context: path.resolve(__dirname, "app"),
 
     entry: {
         vendor: "angular",
-        app: "./src/app.ts",
+        app: "./src/app/app.ts",
     },
 
     stats: {
@@ -37,6 +37,10 @@ let webpackConfig: IWebpackConfig = {
     },
 
     module: {
+        preLoaders: [{
+            test: /\.ts$/,
+            loader: 'tslint'
+        }],
         loaders: [
             {
                 test: /\.ts$/,

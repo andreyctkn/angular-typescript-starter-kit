@@ -1,6 +1,4 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-module.exports = function (config) {
+module.exports = function (config: bc.IKarmaConfig) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -20,7 +18,7 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            './app/unit/spec.loader.ts'
+            './src/app/spec.loader.js'
         ],
 
         // list of files to exclude
@@ -45,17 +43,9 @@ module.exports = function (config) {
                 loaders: [
                     {test: /\.ts$/, loader: 'awesome-typescript', exclude: /node_modules/},
                     {test: /\.html$/, loader: 'raw'},
-                    {
-                        test: /\.css$/,
-                        loader: ExtractTextPlugin.extract('style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
-                    }
+                    {test: /\.css$/, loader: "null"}
                 ]
-            },
-            plugins: [
-                new ExtractTextPlugin('style.css', {allChunks: true})
-            ],
-            stats: {colors: true, reasons: true},
-            debug: false
+            }
         },
 
         webpackServer: {
