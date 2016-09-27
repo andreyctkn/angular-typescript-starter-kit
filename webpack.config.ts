@@ -3,7 +3,7 @@ import webpack = require("webpack");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 
 let webpackConfig: bc.IWebpackConfig = {
-    context: path.resolve(__dirname, "app"),
+    context: path.resolve(__dirname, "src"),
 
     entry: {
         vendor: "angular",
@@ -18,18 +18,13 @@ let webpackConfig: bc.IWebpackConfig = {
     devtool: "inline-source-map",
 
     output: {
-        path: path.resolve(__dirname, "app", "__build"),
+        path: path.resolve(__dirname, "src", "__build"),
         filename: "[name].[hash].bundle.js",
         publicPath: "/"
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({name: ["app", "vendor"]}),
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-            inject: 'body',
-            minify: false
-        })
+        new webpack.optimize.CommonsChunkPlugin({name: ["app", "vendor"]})
     ],
 
     resolve: {
@@ -57,7 +52,7 @@ let webpackConfig: bc.IWebpackConfig = {
         port: 3000,
         inline: true,
         historyApiFallback: true,
-        contentBase: "./app/__build"
+        contentBase: "./src/__build"
     }
 };
 
