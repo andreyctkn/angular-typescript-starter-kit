@@ -1,7 +1,7 @@
 var path = require("path"),
     webpack = require("webpack");
 
-var webpackConfig: IWebpackCofig = {
+var webpackConfig = {
     context: path.resolve(__dirname, 'app'),
 
     entry: {
