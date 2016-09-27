@@ -11,7 +11,7 @@
     "postinstall": "npm run build-configs",
     "dev-build-configs": "npm run build-configs -- --watch",
     "build-configs": "tsc --project tsconfig.build-configs.json",
-    "start": "webpack-dev-server --inline --colors --display-error-details --display-cached",
+    "start": "webpack-dev-server",
     "clean": "rimraf app/__build",
     "build": "npm run clean && webpack -p",
     "test": "karma start"
@@ -26,6 +26,7 @@
     "@types/jasmine": "2.2.34",
     "@types/jquery": "2.0.32",
     "@types/node": "6.0.41",
+    "@types/webpack": "1.12.34",
     "angular": "1.5.8",
     "angular-mocks": "1.5.8",
     "awesome-typescript-loader": "2.2.4",

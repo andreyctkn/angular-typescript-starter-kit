@@ -53,3 +53,17 @@ interface IWebpackConfig {
         setTimeout?: boolean
     };
 }
+
+declare module "html-webpack-plugin" {
+    interface Options {
+        template: string;
+        inject: string;
+        minify: boolean;
+    }
+
+    class HtmlWebpackPlugin{
+        constructor(opts: Options)
+    }
+
+    export = HtmlWebpackPlugin;
+}
