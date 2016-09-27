@@ -24,8 +24,7 @@ module.exports = function (config) {
         ],
 
         // list of files to exclude
-        exclude: [
-        ],
+        exclude: [],
 
 
         // preprocess matching files before serving them to the browser
@@ -44,15 +43,18 @@ module.exports = function (config) {
             },
             module: {
                 loaders: [
-                    { test: /\.ts$/, loader: 'awesome-typescript', exclude: /node_modules/ },
-                    { test: /\.html$/, loader: 'raw' },
-                    { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]') }
+                    {test: /\.ts$/, loader: 'awesome-typescript', exclude: /node_modules/},
+                    {test: /\.html$/, loader: 'raw'},
+                    {
+                        test: /\.css$/,
+                        loader: ExtractTextPlugin.extract('style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
+                    }
                 ]
             },
             plugins: [
-                new ExtractTextPlugin('style.css', { allChunks: true })
+                new ExtractTextPlugin('style.css', {allChunks: true})
             ],
-            stats: { colors: true, reasons: true },
+            stats: {colors: true, reasons: true},
             debug: false
         },
 
@@ -96,4 +98,4 @@ module.exports = function (config) {
         // how many browser should be started simultanous
         concurrency: Infinity
     })
-}
+};

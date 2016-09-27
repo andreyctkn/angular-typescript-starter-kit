@@ -1,7 +1,7 @@
 var path = require("path"),
     webpack = require("webpack");
 
-module.exports = {
+var webpackConfig: IWebpackCofig = {
     context: path.resolve(__dirname, 'app'),
 
     entry: {
@@ -37,3 +37,5 @@ module.exports = {
         ],
     }
 };
+
+module.exports = webpackConfig;

@@ -1,12 +1,10 @@
-import * as tpl from './hello.html';
-
 export class HelloComponent implements ng.IComponentOptions {
     displayName: String;
     style: any;
 
     static selector = "hello";
     static controller = HelloComponent;
-    static template = tpl;
+    static template = require('./hello.html');
     static $inject = ["$element"];
 
     constructor($element) { }
