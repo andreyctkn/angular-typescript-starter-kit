@@ -79,8 +79,11 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
-## tsd ##
-# tsd locations
+## js build configs ##
 
-/typings
-app/__build
+webpack.config.js
+karma.config.js
+
+## build output ##
+
+src/__build
