@@ -40,7 +40,7 @@ module.exports = function (config: bc.IKarmaConfig) {
                 extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
             },
             module: {
-                loaders: [
+                rules: [
                     {test: /\.ts$/, loader: 'awesome-typescript', exclude: /node_modules/},
                     {test: /\.html$/, loader: 'raw'},
                     {test: /\.css$/, loader: "null"}

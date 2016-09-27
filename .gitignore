@@ -83,3 +83,7 @@ crashlytics-build.properties
 
 webpack.config.js
 karma.config.js
+
+## build output ##
+
+src/__build

@@ -1,13 +1,12 @@
 export class HelloComponent implements ng.IComponentOptions {
     displayName: String;
-    style: any;
 
     static selector = "hello";
     static controller = HelloComponent;
-    static template = require('./hello.html');
+    static template = require("./hello.html");
     static $inject = ["$element"];
 
-    constructor($element) { }
+    constructor(private $element) { }
 
     $onInit() {
         this.displayName = "firstName";

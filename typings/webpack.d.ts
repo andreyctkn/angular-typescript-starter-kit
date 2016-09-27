@@ -16,6 +16,13 @@ declare module bc {
         noInfo?: boolean;
     }
 
+    interface ILoaderConfig {
+        loader: string;
+        test: RegExp;
+        exclude?: RegExp;
+        enforce?: string;
+    }
+
     interface IWebpackConfig {
         cache?: boolean;
         context?: string;
@@ -25,9 +32,7 @@ declare module bc {
         output?: any;
         stats?: any;
         module?: {
-            preLoaders?: Array<any>;
-            loaders?: Array<any>;
-            postLoaders?: Array<any>
+            rules?: Array<ILoaderConfig>;
         };
         plugins?: Array<any>;
         resolve?: {

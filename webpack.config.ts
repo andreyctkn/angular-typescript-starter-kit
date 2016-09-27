@@ -3,8 +3,6 @@ import webpack = require("webpack");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 
 let webpackConfig: bc.IWebpackConfig = {
-    context: path.resolve(__dirname, "src"),
-
     entry: {
         vendor: "angular",
         app: "./src/app/app.ts",
@@ -24,7 +22,12 @@ let webpackConfig: bc.IWebpackConfig = {
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({name: ["app", "vendor"]})
+        new webpack.optimize.CommonsChunkPlugin({name: ["app", "vendor"]}),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: 'body',
+            minify: false
+        })
     ],
 
     resolve: {
@@ -32,20 +35,11 @@ let webpackConfig: bc.IWebpackConfig = {
     },
 
     module: {
-        preLoaders: [{
-            test: /\.ts$/,
-            loader: 'tslint'
-        }],
-        loaders: [
-            {
-                test: /\.ts$/,
-                loader: "awesome-typescript",
-                exclude: /(node_modules|bower_components)/
-            },
-            {
-                test: /\.html$/, loader: "raw"
-            }
-        ],
+        rules: [
+            {enforce: "pre", test: /\.ts$/, exclude: /node_modules/, loader: "tslint"},
+            {test: /\.ts$/, exclude: /node_modules/, loader: "awesome-typescript"},
+            {test: /\.html$/, loader: "raw"}
+        ]
     },
 
     devServer: {
