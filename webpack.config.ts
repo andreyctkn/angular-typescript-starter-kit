@@ -2,7 +2,7 @@ import path = require("path");
 import webpack = require("webpack");
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 
-let webpackConfig = {
+let webpackConfig: IWebpackConfig = {
     context: path.resolve(__dirname, "app"),
 
     entry: {

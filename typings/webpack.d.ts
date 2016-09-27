@@ -1,12 +1,4 @@
-// Types
 type Entry = Array<string> | Object;
-
-type Output = Array<string> | {
-    path: string,
-    filename: string
-};
-
-type EnvOptions = any;
 
 interface IWebpackConfig {
     cache?: boolean;
@@ -15,13 +7,12 @@ interface IWebpackConfig {
     devtool?: string;
     entry: Entry;
     output: any;
-    module?: any;
     stats?: any;
-    // module?: {
-    //   preLoaders?: Array<any>;
-    //   loaders?: Array<any>;
-    //   postLoaders?: Array<any>
-    // };
+    module?: {
+      preLoaders?: Array<any>;
+      loaders?: Array<any>;
+      postLoaders?: Array<any>
+    };
     plugins?: Array<any>;
     resolve?: {
         unsafeCache?: boolean | Array<string>;
