@@ -13,7 +13,7 @@
     "build-configs": "tsc --project tsconfig.build-configs.json",
     "start": "webpack-dev-server --inline --colors --display-error-details --display-cached",
     "clean": "rimraf app/__build",
-    "build": "npm run clean && webpack -p --config webpack.config.ts",
+    "build": "npm run clean && webpack -p",
     "test": "karma start"
   },
   "bugs": {
@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/AndreyUtka/angular-typescript-starter-kit#readme",
   "dependencies": {
-    "@types/angular": "^1.5.16",
-    "@types/angular-mocks": "^1.5.5",
-    "@types/jasmine": "^2.2.34",
-    "@types/jquery": "^2.0.32",
-    "@types/node": "^6.0.41",
+    "@types/angular": "1.5.16",
+    "@types/angular-mocks": "1.5.5",
+    "@types/jasmine": "2.2.34",
+    "@types/jquery": "2.0.32",
+    "@types/node": "6.0.41",
     "angular": "1.5.8",
     "angular-mocks": "1.5.8",
     "awesome-typescript-loader": "2.2.4",
@@ -44,7 +44,6 @@
     "tslint": "3.15.1",
     "tslint-loader": "2.1.5",
     "typescript": "2.0.3",
-    "typings": "1.4.0",
     "webpack": "2.1.0-beta.25",
     "webpack-dev-server": "2.1.0-beta.6"
   }
