@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/AndreyUtka/angular-typescript-starter-kit#readme",
   "dependencies": {
-    "angular": "^1.5.3",
+    "angular": "1.5.3",
     "angular-mocks": "^1.5.3",
     "awesome-typescript-loader": "^0.17.0-rc.3",
     "css-loader": "^0.23.1",
