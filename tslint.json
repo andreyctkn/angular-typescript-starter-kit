@@ -15,6 +15,9 @@
         "named": "never",
         "asyncArrow": "always"
       }
+    ],
+    "trailing-comma": [
+      false
     ]
   },
   "rulesDirectory": []

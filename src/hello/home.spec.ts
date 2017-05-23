@@ -1,3 +1,6 @@
+import * as angular from "angular";
+import "angular-mocks";
+
 describe("HelloComponent", () => {
     let _$scope;
     let _$compile;

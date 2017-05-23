@@ -1,24 +1,24 @@
 export class HelloComponent implements ng.IComponentOptions {
-    displayName: String;
-    style: any;
+    public static selector = "hello";
+    public static templateUrl = "helo/hello.html";
+    public static controller = HelloComponent;
+    public static $inject = ["$element"];
 
-    static selector = "hello";
-    static template = require("./hello.html");
-    static controller = HelloComponent;
-    static $inject = ["$element"];
+    public displayName: string;
+    public style: any;
 
-    constructor($element) { }
-
-    $onInit() {
-        this.displayName = "firstName";
-        this.style = require("./hello.css");
+    constructor(public $element: ng.IAugmentedJQuery) {
     }
 
-    $onChanges(object: any) {
+    public $onInit() {
+        this.displayName = "firstName";
+    }
+
+    public $onChanges(object: any) {
         console.warn(object);
     }
 
-    $onDestroy() {
+    public $onDestroy() {
         console.warn("on destroy");
     }
 }

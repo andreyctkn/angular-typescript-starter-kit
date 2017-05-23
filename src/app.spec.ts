@@ -4,7 +4,7 @@ describe("Applications initializations", () => {
         module = angular.module("ng-ts-starterkit");
     });
 
-    it("should be registered", function() {
+    it("should be registered", function () {
         expect(module).not.toEqual(null);
     });
 });
