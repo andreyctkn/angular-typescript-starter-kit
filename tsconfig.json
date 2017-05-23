@@ -1,16 +1,24 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "outDir": "dist/_temp/",
+    "inlineSourceMap": true,
     "target": "es5",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noImplicitAny": false,
-    "removeComments": false,
-    "sourceMap": true
+    "pretty": true,
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "allowSyntheticDefaultImports": true
   },
+  "include": [
+    "src/**/*",
+    "typings"
+  ],
   "exclude": [
     "node_modules",
-    "typings/main",
-    "typings/main.d.ts"
+    "dist"
   ]
 }
