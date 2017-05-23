@@ -3,7 +3,7 @@ const config = require("./rollup.helper");
 const resolve = require('rollup-plugin-node-resolve');
 
 export default {
-    entry: "dist/_temp/index.js",
+    entry: "dist/_temp/app.js",
     dest: "dist/build/bundle.js",
     format: "iife",
     sourceMap: true,
