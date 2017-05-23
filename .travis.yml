@@ -6,7 +6,6 @@ cache:
     - node_modules
 script:
   - npm run build
-  - npm run test
 notifications:
   on_failure: change # always|never
   on_success: never

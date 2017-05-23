@@ -3,7 +3,7 @@ import {
     HelloComponent
 } from "./hello/hello.component";
 
-angular.module("ng-ts-starterkit", ["ng-ts-starterkit.templates"])
+angular.module("ng-ts-starterkit", [])
     .component(HelloComponent.selector, HelloComponent);
 
 angular.element(document).ready(function () {

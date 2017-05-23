@@ -1,0 +1,11 @@
+{
+  "transform": {
+    ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+  },
+  "testRegex": ".*.spec.ts$",
+  "preset": "jest-preset-angular",
+  "setupTestFrameworkScriptFile": "<rootDir>/src/init.spec.js",
+  "moduleFileExtensions": [
+    "ts"
+  ]
+}
