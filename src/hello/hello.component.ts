@@ -1,6 +1,7 @@
 export class HelloComponent implements ng.IComponentOptions {
     public static selector = "hello";
-    public static template = `<h2 class="{{::$ctrl.style.label}}">{{$ctrl.displayName}}</h2>`;
+    // public static template = `<h2 class="{{::$ctrl.style.label}}">{{$ctrl.displayName}}</h2>`;
+    public static templateUrl = "hello/hello.html";
     public static controller = HelloComponent;
     public static $inject = ["$element"];
 
@@ -11,7 +12,7 @@ export class HelloComponent implements ng.IComponentOptions {
     }
 
     public $onInit() {
-        this.displayName = "firstName";
+        this.displayName = "firstName1";
     }
 
     public $onChanges(object: any) {

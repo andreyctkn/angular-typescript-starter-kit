@@ -1,11 +1,17 @@
 {
   "transform": {
-    ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    ".ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
   },
-  "testRegex": ".*.spec.ts$",
-  "preset": "jest-preset-angular",
-  "setupTestFrameworkScriptFile": "<rootDir>/src/init.spec.js",
+  "mapCoverage": true,
+  "collectCoverage": false,
+  "collectCoverageFrom": [
+    "src/**/*.{ts,tsx}",
+    "!src/spec.config.ts"
+  ],
+  "testRegex": "src/.*.spec.(ts|tsx|js)$",
+  "setupTestFrameworkScriptFile": "<rootDir>/src/spec.config.ts",
   "moduleFileExtensions": [
+    "js",
     "ts"
   ]
 }
