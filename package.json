@@ -28,7 +28,7 @@
     "scss:build": "node-sass src/ -o dist/build/ --output-style compressed",
     "scss:dev": "npm run scss:build -- -w",
     "notify": "node build-process/notify.js",
-    "lint:watch": "onchange 'src/**/*.tsx' -d 5000 -- npm run lint",
+    "lint:watch": "onchange 'src/**/*.ts' -d 5000 -- npm run lint",
     "lint": "tslint --project ./tsconfig.json --force --format stylish",
     "server:run": "node server/app.js",
     "test": "npm run clean && npm run angular-tpl:build && NODE_ENV=test jest --config jest.config.json",
