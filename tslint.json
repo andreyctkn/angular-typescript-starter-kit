@@ -18,7 +18,8 @@
     ],
     "trailing-comma": [
       false
-    ]
+    ],
+    "ordered-imports": false
   },
   "rulesDirectory": []
 }
