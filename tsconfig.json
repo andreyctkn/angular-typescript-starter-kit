@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": true,
-    "outDir": "dist/_temp/",
+    "outDir": "dist/_tmp/",
     "inlineSourceMap": true,
     "target": "es5",
     "pretty": true,
