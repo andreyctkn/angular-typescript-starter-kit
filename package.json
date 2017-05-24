@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf ./dist && mkdir -p ./dist/build/ && touch ./dist/build/template.js",
+    "clean": "rimraf ./dist && mkdir -p ./dist/build/ && touch ./dist/build/templates.js",
     "pre-start": "npm run clean && npm run notify",
     "start": "BUILD_TYPE='start' npm run pre-start && npm run build:dev && npm run dev:watch",
     "build": "BUILD_TYPE='prod' npm run pre-start && npm run build:prod",
@@ -22,7 +22,7 @@
     "dev:watch": "npm run lint:watch & npm run dev:ts & npm run rollup:dev & npm run scss:dev & npm run server:run & npm run angular-tpl:dev & wait",
     "dev:ts": "npm run build:ts -- --watch",
     "angular-tpl:dev": "onchange 'src/**/*.html' -- npm run angular-tpl:build",
-    "angular-tpl:build": "nghtml2js -m 'ng-ts-starterkit.templates' -s browser -f 'src/**/*.html' -p src/ -o dist/build/template.js",
+    "angular-tpl:build": "nghtml2js -m 'ng-ts-starterkit.templates' -s browser -f 'src/**/*.html' -p src/ -o dist/build/templates.js",
     "rollup:dev": "rollup -c build-process/rollup.config.dev.js --watch",
     "rollup:prod": "rollup -c build-process/rollup.config.prod.js",
     "scss:build": "node-sass src/ -o dist/build/ --output-style compressed",
@@ -31,7 +31,7 @@
     "lint:watch": "onchange 'src/**/*.tsx' -d 5000 -- npm run lint",
     "lint": "tslint src/**/*.ts --force --format stylish",
     "server:run": "node server/app.js",
-    "test": "NODE_ENV=test jest --config jest.config.json",
+    "test": "npm run clean && npm run angular-tpl:build && NODE_ENV=test jest --config jest.config.json",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --no-cache --coverage"
   },

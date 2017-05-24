@@ -2,7 +2,6 @@
   "transform": {
     ".ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
   },
-  "mapCoverage": true,
   "collectCoverage": false,
   "collectCoverageFrom": [
     "src/**/*.{ts,tsx}",

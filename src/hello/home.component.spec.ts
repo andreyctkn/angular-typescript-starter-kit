@@ -3,6 +3,7 @@ describe("HelloComponent", () => {
     let compile: ng.ICompileService;
 
     beforeEach(() => {
+        angular.mock.module("ng-ts-starterkit.templates");
         angular.mock.module("ng-ts-starterkit");
         angular.mock.inject(($compile: ng.ICompileService, $rootScope: ng.IRootScopeService) => {
             scope = $rootScope.$new();
