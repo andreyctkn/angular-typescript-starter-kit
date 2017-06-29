@@ -1,4 +1,4 @@
-export class HelloComponent implements ng.IComponentOptions {
+export class HelloComponent implements ng.IComponentController {
     public static selector = "hello";
     public static templateUrl = "hello/hello.html";
     public static controller = HelloComponent;
