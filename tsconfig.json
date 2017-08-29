@@ -11,7 +11,12 @@
     "pretty": true,
     "importHelpers": true,
     "noEmitHelpers": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "es2015.collection",
+      "dom",
+      "es5"
+    ]
   },
   "include": [
     "src/**/*",
