@@ -1,22 +1,29 @@
 {
   "compilerOptions": {
-    "declaration": false,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "noEmitOnError": true,
-    "noImplicitAny": true,
-    "outDir": "dist/_tmp/",
-    "inlineSourceMap": true,
-    "target": "es5",
-    "pretty": true,
-    "importHelpers": true,
-    "noEmitHelpers": true,
     "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "emitBOM": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "inlineSourceMap": true,
     "lib": [
       "es2015.collection",
       "dom",
       "es5"
-    ]
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "outDir": "dist/_tmp/",
+    "pretty": true,
+    "removeComments": true,
+    "target": "es5"
   },
   "include": [
     "src/**/*",
